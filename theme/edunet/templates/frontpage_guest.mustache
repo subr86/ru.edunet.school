@@ -42,53 +42,49 @@
         "shoulddisplaymarketing": true
     }
 }}
-    {{>theme_edunet/inc_start}}
+{{>theme_edunet/inc_start}}
 
-    <div id="page" class="container-fluid">
-        <div id="page-header" class="frontpage-guest-header">
+<div id="page" class="container-fluid">
+    <div id="page-header" class="frontpage-guest-header">
 
-            {{#sliderenabled}}
-                {{#sliderfrontpage}}
-                    {{>theme_edunet/slideshow}}
+        {{#sliderenabled}}
+            {{#sliderfrontpage}}
+                {{>theme_edunet/slideshow}}
 
-                    {{^disablefrontpageloginbox}}
-                        <div id="loginbox" class="d-none d-lg-block">
-                            <div class="card" id="boxForm">
-                                {{>theme_edunet/frontpage_login}}
-                            </div>
-                        </div>
-                    {{/disablefrontpageloginbox}}
-                {{/sliderfrontpage}}
-            {{/sliderenabled}}
-
-            {{^sliderenabled}}
-                <div class="row" id="loginbox">
-                    <div class="col-sm-12 hidden-sm-down {{#disablefrontpageloginbox}}col-md-12{{/disablefrontpageloginbox}}{{^disablefrontpageloginbox}}col-md-7{{/disablefrontpageloginbox}}" id="intro">
-                        {{#bannerheading}}
-                            <h1>{{{ bannerheading }}}</h1>
-                        {{/bannerheading}}
-                        {{#bannercontent}}
-                            <h2>{{{ bannercontent }}}</h2>
-                        {{/bannercontent}}
-                    </div>
-                    {{^disablefrontpageloginbox}}
-                        <div class="col-12 col-sm-12 col-md-5 card d-none d-lg-block" id="boxForm">
+                {{^disablefrontpageloginbox}}
+                    <div id="loginbox" class="d-none d-lg-block">
+                        <div class="card" id="boxForm">
                             {{>theme_edunet/frontpage_login}}
-                        </div><!-- end of .card-body -->
-                    {{/disablefrontpageloginbox}}
-                </div> <!-- end of #boxForm -->
-            {{/sliderenabled}}
-        </div>
+                        </div>
+                    </div>
+                {{/disablefrontpageloginbox}}
+            {{/sliderfrontpage}}
+        {{/sliderenabled}}
 
-        {{>theme_edunet/frontpage_marketing}}
-
-        <div class="container frontpage-maincontent">
-          {{{ output.main_content }}}
-        </div>
-
-        {{>theme_edunet/frontpage_numbers}}
-
-        {{>theme_edunet/frontpage_sponsorsclients}}
+        {{^sliderenabled}}
+            <div class="row" id="loginbox">
+                <div class="col-sm-12 hidden-sm-down {{#disablefrontpageloginbox}}col-md-12{{/disablefrontpageloginbox}}{{^disablefrontpageloginbox}}col-md-7{{/disablefrontpageloginbox}}"
+                     id="intro">
+                    <h1>{{#str}}headertitle, theme_edunet{{/str}}</h1>
+                </div>
+                {{^disablefrontpageloginbox}}
+                    <div class="col-12 col-sm-12 col-md-5 card d-none d-lg-block" id="boxForm">
+                        {{>theme_edunet/frontpage_login}}
+                    </div><!-- end of .card-body -->
+                {{/disablefrontpageloginbox}}
+            </div> <!-- end of #boxForm -->
+        {{/sliderenabled}}
     </div>
+
+    {{>theme_edunet/frontpage_marketing}}
+
+    <div class="container frontpage-maincontent">
+        {{{ output.main_content }}}
+    </div>
+
+    {{>theme_edunet/frontpage_numbers}}
+
+    {{>theme_edunet/frontpage_sponsorsclients}}
+</div>
 
 {{>theme_edunet/inc_end}}
